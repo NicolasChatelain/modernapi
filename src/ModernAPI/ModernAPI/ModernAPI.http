@@ -1,0 +1,6 @@
+@ModernAPI_HostAddress = http://localhost:5037
+
+GET {{ModernAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

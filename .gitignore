@@ -1,0 +1,60 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+*.log
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+
+# VS Code settings
+.vscode/
+
+# Visual Studio settings
+.vs/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+*.symbols.nupkg
+project.lock.json
+project.fragment.lock.json
+
+# Entity Framework Migrations history
+Migrations/
+
+# JetBrains Rider
+.idea/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Recycle Bin used by VS
+$RECYCLE.BIN/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# User-specific files
+*.dbmdl
+*.dbproj.schemaview
+
+# Auto-generated files (e.g. from tools like Resharper)
+_ReSharper*/
+*.DotSettings.user
+
+# IIS Express
+.vs/
+*.vspscc
+*.vssscc
