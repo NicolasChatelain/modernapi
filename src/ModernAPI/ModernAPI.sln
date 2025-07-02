@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernAPI", "ModernAPI\ModernAPI.csproj", "{2A7DE636-24A2-45B9-B2DC-EBE0E7F09819}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernAPI.DataAccess", "ModernAPI.DataAccess\ModernAPI.DataAccess.csproj", "{63C89BD1-B171-4813-8E61-D3771AAEAF1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2A7DE636-24A2-45B9-B2DC-EBE0E7F09819}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A7DE636-24A2-45B9-B2DC-EBE0E7F09819}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A7DE636-24A2-45B9-B2DC-EBE0E7F09819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63C89BD1-B171-4813-8E61-D3771AAEAF1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63C89BD1-B171-4813-8E61-D3771AAEAF1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63C89BD1-B171-4813-8E61-D3771AAEAF1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63C89BD1-B171-4813-8E61-D3771AAEAF1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

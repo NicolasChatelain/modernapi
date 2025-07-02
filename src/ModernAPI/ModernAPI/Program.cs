@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using ModernAPI.DataAccess.Context;
+
 namespace ModernAPI
 {
     public class Program
@@ -9,6 +12,13 @@ namespace ModernAPI
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+            builder.Services.AddDbContext<UserContext>(options =>
+                options.UseMySql(
+                    builder.Configuration.GetConnectionString("DefaultConnection"),
+                    ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
+                )
+            );
 
             var app = builder.Build();
 
