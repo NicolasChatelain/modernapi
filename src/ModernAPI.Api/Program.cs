@@ -1,3 +1,4 @@
+
 using Microsoft.EntityFrameworkCore;
 using ModernAPI.DataAccess.Context;
 
@@ -17,11 +18,11 @@ namespace ModernAPI.Api
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddDbContext<UserContext>(options =>
-                options.UseMySql(
-                    builder.Configuration.GetConnectionString("DefaultConnection"),
-                    ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
-                )
-            );
+                 options.UseMySql(
+                     builder.Configuration.GetConnectionString("DefaultConnection"),
+                     ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
+                 )
+             );
 
             var app = builder.Build();
 
@@ -31,6 +32,9 @@ namespace ModernAPI.Api
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseAuthorization();
+
 
             app.MapControllers();
 

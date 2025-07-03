@@ -5,7 +5,7 @@ VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernAPI.DataAccess", "ModernAPI.DataAccess\ModernAPI.DataAccess.csproj", "{63C89BD1-B171-4813-8E61-D3771AAEAF1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernAPI.Api", "ModernAPI.Api\ModernAPI.Api.csproj", "{3446AF65-FA45-45C5-9A84-9A26B9E61C6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernAPI.Api", "ModernAPI.Api\ModernAPI.Api.csproj", "{A69A4AA2-4268-437F-A7EA-210036B4371A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{63C89BD1-B171-4813-8E61-D3771AAEAF1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63C89BD1-B171-4813-8E61-D3771AAEAF1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63C89BD1-B171-4813-8E61-D3771AAEAF1E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3446AF65-FA45-45C5-9A84-9A26B9E61C6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3446AF65-FA45-45C5-9A84-9A26B9E61C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3446AF65-FA45-45C5-9A84-9A26B9E61C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3446AF65-FA45-45C5-9A84-9A26B9E61C6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A69A4AA2-4268-437F-A7EA-210036B4371A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A69A4AA2-4268-437F-A7EA-210036B4371A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A69A4AA2-4268-437F-A7EA-210036B4371A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A69A4AA2-4268-437F-A7EA-210036B4371A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

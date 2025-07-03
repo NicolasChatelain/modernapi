@@ -1,17 +1,16 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ModernAPI.Controllers
+namespace ModernAPI.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class UsersController : ControllerBase
     {
         [HttpGet]
-        [Route("users")]
         public IActionResult Get()
         {
-            return Ok();
+            return Ok("Success");
         }
     }
 }
