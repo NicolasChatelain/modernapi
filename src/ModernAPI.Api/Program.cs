@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ModernAPI.DataAccess.Context;
+using System.Diagnostics;
 
 namespace ModernAPI.Api
 {
@@ -25,6 +26,16 @@ namespace ModernAPI.Api
 
             var app = builder.Build();
 
+            using (var scope = app.Services.CreateScope())
+            {
+                var context = scope.ServiceProvider.GetRequiredService<UserContext>();
+                if (!context.Database.CanConnect())
+                {
+                    Debug.WriteLine("A connection to the database was not able to be established.");
+                    Environment.Exit(1);
+                }
+            }
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -32,7 +43,7 @@ namespace ModernAPI.Api
                 app.UseSwaggerUI();
             }
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
 
             app.MapControllers();
