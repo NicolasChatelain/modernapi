@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ModernAPI.Api.Models;
+﻿using Microsoft.EntityFrameworkCore;
 using ModernAPI.DataAccess.Context;
 using ModernAPI.DataAccess.Model;
+using Microsoft.AspNetCore.Mvc;
+using ModernAPI.Api.Models;
 using System.Net;
 
 namespace ModernAPI.Api.Controllers
