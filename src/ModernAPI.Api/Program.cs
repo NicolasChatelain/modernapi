@@ -19,7 +19,7 @@ namespace ModernAPI.Api
             builder.Services.AddDbContext<UserContext>(options =>
                  options.UseMySql(
                      builder.Configuration.GetConnectionString("DefaultConnection"),
-                     ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
+                     new MySqlServerVersion(new Version(9, 3, 0))
                  )
              );
 
