@@ -1,0 +1,17 @@
+:root {
+    color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-main: #fafaf9;
+        --text-main: #1c1c1e;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-main: #1c1c1e;
+        --text-main: #fafaf9;
+    }
+}
