@@ -5,6 +5,60 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>modern-api-react-frontend</title>
+    <script>
+      (function () {
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          if (newTheme === "dark") {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        }
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem("theme");
+        } catch (err) {}
+        window.__setPreferredTheme = function (newTheme) {
+          preferredTheme = newTheme;
+          setTheme(newTheme);
+          try {
+            localStorage.setItem("theme", newTheme);
+          } catch (err) {}
+        };
+
+        var initialTheme = preferredTheme;
+        var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        if (!initialTheme) {
+          initialTheme = darkQuery.matches ? "dark" : "light";
+        }
+        setTheme(initialTheme);
+        darkQuery.addEventListener("change", function (e) {
+          if (!preferredTheme) {
+            setTheme(e.matches ? "dark" : "light");
+          }
+        }); 
+      })();
+    </script>
+    <style>
+      :root {
+        --bg-main: #fafaf9;
+        --text-main: #1c1c1e;
+      }
+    
+      html.dark {
+        --bg-main: #1c1c1e;
+        --text-main: #fafaf9;
+      }
+    
+      html,
+      body {
+        background-color: var(--bg-main);
+        color: var(--text-main);
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

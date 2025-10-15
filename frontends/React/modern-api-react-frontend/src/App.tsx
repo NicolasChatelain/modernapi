@@ -1,17 +1,17 @@
-import {applyTheme, getTheme, switchTheme} from './theme/theme_switcher'
-import { useEffect } from 'react'
 import './App.css'
 
 function App() {
 
-  useEffect(() => {
-    applyTheme(getTheme());
-  }, []);
+  const toggleTheme = () => {
+    const currentTheme = window.__theme;
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    window.__setPreferredTheme(newTheme);
+  };
 
   return (
     <>
       <p>Hello world!</p>
-      <button onClick={switchTheme}>Theme</button>
+      <button onClick={toggleTheme}>Theme</button>
     </>
   )
 }
