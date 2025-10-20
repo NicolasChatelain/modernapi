@@ -10,10 +10,9 @@ namespace ModernAPI.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
@@ -22,7 +21,17 @@ namespace ModernAPI.Api
                      builder.Configuration.GetConnectionString("DefaultConnection"),
                      new MySqlServerVersion(new Version(9, 3, 0))
                  )
-             );
+            );
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowReact", policy =>
+                {
+                    policy.WithOrigins("http://localhost:5173")
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
+                });
+            });
 
             var app = builder.Build();
 
@@ -45,7 +54,7 @@ namespace ModernAPI.Api
 
             //app.UseAuthorization();
 
-
+            app.UseCors("AllowReact");
             app.MapControllers();
 
             app.Run();
