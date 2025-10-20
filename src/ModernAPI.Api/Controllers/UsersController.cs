@@ -66,5 +66,21 @@ namespace ModernAPI.Api.Controllers
             }
 
         }
+
+        [HttpGet]
+        public async Task<ActionResult<List<User>>> GetAllUsers()
+        {
+            List<User>? Users;
+            try
+            {
+                Users = await _ctx.Users.ToListAsync();
+            }
+            catch (Exception)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, "Something went wrong on our side.");
+            }
+
+            return Ok(Users);
+        }
     }
 }
