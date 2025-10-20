@@ -1,4 +1,4 @@
-import './App.css'
+import { Button } from "./components/ui/button"
 
 function App() {
 
@@ -11,7 +11,9 @@ function App() {
   return (
     <>
       <p>Hello world!</p>
-      <button onClick={toggleTheme}>Theme</button>
+      <div>
+        <Button onClick={toggleTheme}>Theme</Button>
+      </div>
     </>
   )
 }
