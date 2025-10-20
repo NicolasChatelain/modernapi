@@ -1,5 +1,6 @@
-import { Button } from "./components/ui/button"
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "./components/ui/table"
+import { Button } from "./components/ui/button"
+import { useState, useEffect } from "react";
 
 function App() {
 
@@ -8,6 +9,18 @@ function App() {
     const newTheme = currentTheme === "dark" ? "light" : "dark";
     window.__setPreferredTheme(newTheme);
   };
+
+  const [users, setUsers] = useState<User[] | null>(null);
+
+  useEffect(() => {
+    fetch("http://localhost:5138/api/Users")
+      .then(result => {
+        if (!result.ok) {
+          setUsers(null);
+        }
+        return result.json();
+      }).then(data => { setUsers(data); });
+  }, []);
 
   return (
     <>
@@ -19,37 +32,21 @@ function App() {
           <TableCaption>A list of users</TableCaption>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[100px]">Invoice</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Method</TableHead>
-              <TableHead className="text-right">Amount</TableHead>
+              <TableHead>ID</TableHead>
+              <TableHead>Username</TableHead>
+              <TableHead>Date of birth</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            <TableRow>
-              <TableCell className="font-medium">INV001</TableCell>
-              <TableCell>Paid</TableCell>
-              <TableCell>Credit Card</TableCell>
-              <TableCell className="text-right">$250.00</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell className="font-medium">INV001</TableCell>
-              <TableCell>Paid</TableCell>
-              <TableCell>Credit Card</TableCell>
-              <TableCell className="text-right">$250.00</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell className="font-medium">INV001</TableCell>
-              <TableCell>Paid</TableCell>
-              <TableCell>Credit Card</TableCell>
-              <TableCell className="text-right">$250.00</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell className="font-medium">INV001</TableCell>
-              <TableCell>Paid</TableCell>
-              <TableCell>Credit Card</TableCell>
-              <TableCell className="text-right">$250.00</TableCell>
-            </TableRow>
+              {
+                users?.map(user => (
+                  <TableRow key={user.id}>
+                    <TableCell>{user.id}</TableCell>
+                    <TableCell>{user.userName}</TableCell>
+                    <TableCell>{user.dateOfBirth}</TableCell>
+                  </TableRow>
+                ))
+              }
           </TableBody>
         </Table>
       </div>
